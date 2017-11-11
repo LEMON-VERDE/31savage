@@ -42,6 +42,9 @@ namespace _31Savage
             this.suit = suit;
         }
 
-
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

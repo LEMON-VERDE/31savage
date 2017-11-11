@@ -9,20 +9,22 @@ namespace _31Savage
     class User
     {
         public string name;
+        public Game game;
         public List<Card> knownCards;
 
-        public User(string name)
+        public User(string name, Game game)
         {
             this.name = name;
             this.knownCards = new List<Card>();
         }
 
-
-        public void playTurn (Game game)
+        public virtual void playTurn ()
         {
             // Ask through the GUI which pile was drawn from
 
             // Ask through the GUI which card was thrown
+
+            // Modify Game attributes according to user inputs
 
         }
     }
