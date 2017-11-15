@@ -19,7 +19,7 @@ namespace _31Savage
 
         //Game
         public void initGame() { }
-
+        public void play() { }
         //List of players
         private void setListIterator() { listIterator = players.GetEnumerator();
                                         listIterator.MoveNext();}
