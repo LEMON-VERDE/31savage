@@ -8,10 +8,13 @@ namespace _31Savage
 {
     class EvaluatedTurnDecision : TurnDecision
     {
+        List<Card> cardsChosen;
+        double worthAfterTurn;
 
-        public EvaluatedTurnDecision(Card discarded, DrawPile pileChosen) : base(discarded, pileChosen)
+        public EvaluatedTurnDecision(Card discarded, DrawPile pileChosen, List<Card> cardsChosen) : base(discarded, pileChosen)
         {
-
+            this.cardsChosen = cardsChosen;
+            worthAfterTurn = Rules31.evaluateHand(cardsChosen);
         }
     }
 }
