@@ -8,40 +8,34 @@ namespace _31Savage
 {
     class Game
     {
-        public int round;
+        public int round = 0;
         public int cardsInDrawPile = 52;
         public Stack<Card> throwAwayPile;
         public List<User> players;
         private User currentPlayer;
-        private User playerWhoKnocked;
-        private List<User>.Enumerator listIterator;
-        private bool hasSetListIterator = false;
+        private User playerWhoKnocked = null;
+        List<User>.Enumerator listIterator;
 
         //Game
-        public void initGame() { }
-        public void play() { }
+
         //List of players
-        private void setListIterator() { listIterator = players.GetEnumerator();
-                                        listIterator.MoveNext();}
-        public void initListIterator() { if (!hasSetListIterator) { setListIterator();
-                                                                     hasSetListIterator = true;} }
-
+        private void initPlayersIterator() {    listIterator = players.GetEnumerator();
+                                                listIterator.MoveNext();}
+        public User nextPlayer() {
+            if (listIterator.MoveNext())
+                return listIterator.Current;
+            else{
+                initPlayersIterator();
+                return listIterator.Current;
+            }
+        }
         //Player
-        public void setCurrentPlayer(User player) { currentPlayer = player; }
-        public User getCurrentPlayer(){ return currentPlayer; }
-        public void setPlayerWhoKnocked(User player) { playerWhoKnocked = player; }
-        public User getPlayerWhoKnocked() { return playerWhoKnocked; }
-
-        //public void currentPlayerPlayed() { setCurrentPlayer(players) }
+        public User getCurrentPlayer() { return listIterator.Current; }
 
         //Card
         public Card getLastThrownCard() { return throwAwayPile.Pop(); }
         public Card checkLastThrownCard() { return throwAwayPile.Peek(); }
         public void throwACard(Card card) { throwAwayPile.Push(card); }
 
-        //Rounds and turns
-        //public bool isGameDone() { if (getCurrentPlayer() == getPlayerWhoKnocked() ||
-       //                                                                             )
-        //                            { return true; } }
     }
 }
