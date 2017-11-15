@@ -37,7 +37,5 @@ namespace _31Savage
         public Card checkLastThrownCard() { return throwAwayPile.Peek(); }
         public void throwACard(Card card) { throwAwayPile.Push(card); }
 
-        //Rounds and turns
-
     }
 }
