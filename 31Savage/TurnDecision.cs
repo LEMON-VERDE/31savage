@@ -17,11 +17,20 @@ namespace _31Savage
 
         Card discarded;
         DrawPile pickedPile;
+        bool knocked;
 
         public TurnDecision(Card discarded, DrawPile pileChosen)
         {
             this.discarded = discarded;
             this.pickedPile = pileChosen;
+            knocked = false;
+        }
+
+        public TurnDecision(bool knocked)
+        {
+            this.discarded = null;
+            this.pickedPile = DrawPile.UNKNOWN;
+            this.knocked = knocked;
         }
     }
 }

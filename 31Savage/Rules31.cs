@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace _31Savage
 {
-    class Rules31
+    static class Rules31
     {
-        static double evaluateHand(List<Card> cardsToEval)
+        public const int NB_CARDS_IN_HAND = 3;
+
+        public static double evaluateHand(List<Card> cardsToEval)
         {
             double max = 0;
             double sum = 0;
