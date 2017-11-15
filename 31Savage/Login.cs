@@ -142,6 +142,8 @@ namespace _31Savage
 
         private void btn_nav_Click(object sender, EventArgs e)
         {
+            GameForm game = new GameForm();
+            game.Show();
         }
     }
 }
