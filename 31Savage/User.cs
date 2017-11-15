@@ -18,7 +18,7 @@ namespace _31Savage
             this.knownCards = new List<Card>();
         }
 
-        public virtual void playTurn ()
+        public virtual TurnDecision playTurn ()
         {
             // Ask through the GUI which pile was drawn from
 
@@ -26,6 +26,7 @@ namespace _31Savage
 
             // Modify Game attributes according to user inputs
 
+            return new TurnDecision(null, TurnDecision.DrawPile.UNKNOWN);
         }
     }
 }
