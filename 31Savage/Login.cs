@@ -17,7 +17,6 @@ namespace _31Savage
         {
             InitializeComponent();
         }
-
         private void btn_start_Click(object sender, EventArgs e)
         {
             btn_start.Visible = false;
